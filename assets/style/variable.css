@@ -1,0 +1,30 @@
+[data-theme="light"]:root {
+    --xj-color: #000000;
+    --xj-body-bgcolor: #ffffff;
+    --xj-header-bgcolor: rgba(255, 255, 255, 0.8);
+    --xj-navbar-icon-bgcolor: #101010;
+    --xj-blogroll-bgcolor: rgba(255, 245, 245, 0.8);
+    --xj-articleCard-bgcolor: rgba(255, 255, 255, 0.8);
+    --theme-button-svg-fill: #2d2d2d;
+    --theme-button-bgcolor: #eeeeef;
+    --theme-button-span-bgcolor: #ffffff;
+}
+
+[data-theme="dark"]:root {
+    --xj-color: #ffffff;
+    --xj-body-bgcolor: #1e1e1e;
+    --xj-header-bgcolor: #1e1e1e;
+    --xj-navbar-icon-bgcolor: #fefefe;
+    --xj-blogroll-bgcolor: rgba(0, 0, 0, 0.8);
+    --xj-articleCard-bgcolor: rgba(0, 0, 0, 0.8);
+    --theme-button-svg-fill: #d9d9d9;
+    --theme-button-bgcolor: #636264;
+    --theme-button-span-bgcolor: #000000;
+}
+:root {
+    color: var(--xj-color);
+    background-color: var(--xj-body-bgcolor);
+}
+:root {
+    --xj-nav-minheight: 2.5rem;
+}

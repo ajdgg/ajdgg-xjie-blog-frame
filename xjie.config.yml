@@ -1,0 +1,23 @@
+title: hello! xjie blog frame
+docsPath: "./docs"
+icon: "/favicon.ico"
+themeColors: "#FC7D49"
+index:
+  name: "index"
+  bgimage: "./bg.jpg"
+  bgFixed: true
+  titleColor: "#000"
+  MainTitle: hello! xjie blog frame
+  subheading: 慢慢的，总会成功的
+  waterfall: true
+header:
+  icon: "/AwajieLogo.svg"
+  iconDark: "/AwajieLogo-dark.svg"
+  text: "awajie"
+infoBox:
+  left: true
+  title: "awajie"
+  content: "啥都不会"
+  icon: "https://awajie.com/_nuxt/zhhy.BDSqM8xd.jpg"
+server:
+  indexPX: 10

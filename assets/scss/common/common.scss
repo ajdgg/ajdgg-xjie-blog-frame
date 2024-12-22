@@ -1,0 +1,9 @@
+html, body, footer, header {
+    transition: background-color .5s, color .5s;
+}
+a {
+    transition: color .3s;
+}
+li {
+    list-style: none;
+}
