@@ -16,7 +16,8 @@
     --xj-header-bgcolor: #1e1e1e;
     --xj-navbar-icon-bgcolor: #fefefe;
     --xj-blogroll-bgcolor: rgba(0, 0, 0, 0.8);
-    --xj-articleCard-bgcolor: rgba(0, 0, 0, 0.8);
+    /* --xj-articleCard-bgcolor: rgba(0, 0, 0, 0.8); */
+    --xj-articleCard-bgcolor: #353535;
     --theme-button-svg-fill: #d9d9d9;
     --theme-button-bgcolor: #636264;
     --theme-button-span-bgcolor: #000000;

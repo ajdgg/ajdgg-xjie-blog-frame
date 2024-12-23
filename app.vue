@@ -25,6 +25,7 @@ onMounted(() => {
   <div>
     <XjieHeader />
     <NuxtPage />
+    <XjieFooter />
   </div>
 </template>
 

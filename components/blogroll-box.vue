@@ -6,6 +6,10 @@
 <script setup>
 const { $xjieConfig } = useNuxtApp();
 // const xjieConfig = $xjieConfig;
+const socialMediasIconObj = {
+    github: "fa-brands fa-github",
+    bilibili: "fa-brands fa-bilibili"
+}
 </script>
 
 <template>
@@ -15,7 +19,10 @@ const { $xjieConfig } = useNuxtApp();
         <div class="xjie-content">{{ $xjieConfig.infoBox.content }}</div>
         <div class="index-icon-set">
             <ClientOnly>
-                <a href="https://github.com/ajdgg" aria-label="GitHub" data-balloon-pos="up">
+                <a v-for="(value, key, index) in $xjieConfig.infoBox.socialMedias" :key="index" :href="value">
+                    <font-awesome-icon style="font-size: 18px; width: 18px;" :icon="socialMediasIconObj[key]" />
+                </a>
+                <!-- <a href="https://github.com/ajdgg" aria-label="GitHub" data-balloon-pos="up">
                     <font-awesome-icon style="font-size: 18px; width: 18px;" icon="fa-brands fa-github" />
                 </a>
                 <a href="https://space.bilibili.com/3493108528449750?spm_id_from=333.1007.0.0" aria-label="Biliili"
@@ -24,7 +31,7 @@ const { $xjieConfig } = useNuxtApp();
                 </a>
                 <a href="mailto:awesomeajie@qq.com" aria-label="e-mail" data-balloon-pos="up">
                     <font-awesome-icon style="font-size: 18px; width: 18px;" icon="fa-solid fa-envelope" />
-                </a>
+                </a> -->
             </ClientOnly>
         </div>
     </div>
@@ -64,6 +71,7 @@ const { $xjieConfig } = useNuxtApp();
     .index-icon-set {
         margin: 10px 0;
         a {
+            color: var(--xj-color);
             margin: 3px;
         }
     }

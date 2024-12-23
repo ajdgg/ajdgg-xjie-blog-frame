@@ -10,7 +10,10 @@ import {
   faBold,
   faItalic,
   faUnderline,
-  faStrikethrough
+  faStrikethrough,
+  faSun,
+  faMoon,
+  faCircleHalfStroke,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faBilibili } from "@fortawesome/free-brands-svg-icons";
 
@@ -23,6 +26,9 @@ export default defineNuxtPlugin((nuxtApp: any) => {
     faItalic,
     faUnderline,
     faStrikethrough,
+    faSun,
+    faMoon,
+    faCircleHalfStroke,
     faGithub,
     faBilibili,
   );

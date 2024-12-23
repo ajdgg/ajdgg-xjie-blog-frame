@@ -47,7 +47,7 @@ function layout() {
 
     if (Width > 1200) {
         columnCount.value = 3;
-    } else if (Width > 640 && Width <= 1200) {
+    } else if (Width > 400 && Width <= 1200) {
         columnCount.value = 2;
     } else {
         columnCount.value = 1;
@@ -77,7 +77,6 @@ function layout() {
         element.style.height = Math.max(...columnHeights.value) + 'px';
         element.style.opacity = '1';
     } else {
-        console.log('No children found');
         f.forEach((child, index) => {
             (child as HTMLElement).style.width = "";
             (child as HTMLElement).style.position = "";

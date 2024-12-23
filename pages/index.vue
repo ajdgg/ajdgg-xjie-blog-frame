@@ -4,6 +4,8 @@
  * @Date: 2024-12-06 21:53:30
 -->
 <script lang="ts" setup>
+import { esl, unobserveElement } from '~/assets/typescript/element-scrolling-listener';
+import { debounce } from '~/assets/typescript/debounce';
 import type { XjieConfigType } from '~/types/xjie.configType';
 const { $xjieConfig } = useNuxtApp();
 const xjieConfig: XjieConfigType = $xjieConfig as XjieConfigType;
@@ -30,22 +32,36 @@ const { data: a } = await useFetch('/api/getArticleList', {
 })
 wData.value = a.value as unknown as Article;
 
-
 onMounted(async() => {
     w.value = true;
+    const xjH = document.getElementById('xj-h') as HTMLDivElement;
+    const bgimage = document.getElementById('bgimage') as HTMLDivElement;
+    esl(xjH, (whether) => {
+        console.log(whether);
+        if (whether) {
+            bgimage.style.filter = 'blur(15px)';
+        } else {
+            bgimage.style.filter = 'blur(0)';
+        };
+    });
+});
+onUnmounted(() => {
+    w.value = false;
+    const xjH = document.getElementById('xj-h') as HTMLDivElement;
+    unobserveElement(xjH);
 })
 </script>
 
 <template>
     <div>
-        <div class="xj-h" :style="{color: xjieConfig?.index?.titleColor || '#000'}">
-            <div class="bgimage" :class=" {'bgimage-absolute': !xjieConfig?.index?.bgFixed, 'bgimage-fixed': xjieConfig?.index?.bgFixed}">
+        <div id="xj-h" class="xj-h" :style="{color: xjieConfig?.index?.titleColor || '#000'}">
+            <div id="bgimage" class="bgimage" :class=" {'bgimage-absolute': !xjieConfig?.index?.bgFixed, 'bgimage-fixed': xjieConfig?.index?.bgFixed}">
                 <img :src="xjieConfig?.index?.bgimage || ''" alt="">
             </div>
             <h1>{{ xjieConfig?.index?.MainTitle }}</h1>
             <h2>{{ xjieConfig?.index?.subheading }}</h2>
         </div>
-        <div class="xj-body">
+        <div class="xj-body" :style="{ marginTop: xjieConfig?.index?.bgFixed ? '0px' : '30px' }">
             <!-- <div style="flex: 1; height: 100vh;">1</div> -->
             <div class="xj-body-waterfall">
                 <xjie-waterfall v-if="w" :data="wData.data || []">
@@ -129,7 +145,8 @@ onMounted(async() => {
     width: 100%;
     height: 100%;
     z-index: -1;
-
+    transform: scale(1.5);
+    transition: filter .3s;
     img {
         width: 100%;
         height: 100%;

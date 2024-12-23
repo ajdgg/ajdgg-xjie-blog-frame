@@ -19,5 +19,8 @@ infoBox:
   title: "awajie"
   content: "啥都不会"
   icon: "https://awajie.com/_nuxt/zhhy.BDSqM8xd.jpg"
+  socialMedias:
+    github: "https://github.com/awajie"
+    bilibili: "https://space.bilibili.com"
 server:
   indexPX: 10
